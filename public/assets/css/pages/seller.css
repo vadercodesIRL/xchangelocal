@@ -1,0 +1,200 @@
+/* seller.css — seller profile & reviews page */
+
+.seller-profile {
+    padding-block: var(--space-8) var(--space-16);
+}
+
+/* ── Profile header card ── */
+
+.seller-profile__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-6) var(--space-7);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-8);
+}
+
+.seller-profile__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    color: var(--color-primary-on);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-2xl);
+    flex-shrink: 0;
+}
+
+.seller-profile__name {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-extrabold);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+    line-height: 1.2;
+}
+
+.seller-profile__meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+}
+
+.seller-profile__rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.seller-profile__stars {
+    color: var(--color-accent-text);
+    font-size: var(--text-base);
+}
+
+.seller-profile__rating-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.seller-profile__no-rating {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+}
+
+/* ── Two-column body ── */
+
+.seller-profile__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+}
+
+@media (min-width: 900px) {
+    .seller-profile__body {
+        grid-template-columns: 5fr 7fr;
+    }
+}
+
+/* ── Section headings ── */
+
+.seller-profile__section-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-5);
+}
+
+.seller-profile__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 7px;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text-muted);
+    line-height: 1;
+}
+
+.seller-profile__empty {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+/* ── Review items ── */
+
+.review-item {
+    padding: var(--space-5) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.review-item:first-child { border-top: 1px solid var(--color-border); }
+
+.review-item__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+}
+
+.review-item__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--weight-bold);
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+}
+
+.review-item__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.review-item__reviewer {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+}
+
+.review-item__stars {
+    color: var(--color-accent-text);
+    font-size: var(--text-xs);
+    line-height: 1.4;
+}
+
+.review-item__date {
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
+}
+
+.review-item__body {
+    margin-left: calc(36px + var(--space-3));
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+}
+
+/* ── Seller listings grid ── */
+
+.seller-listings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+}
+
+@media (min-width: 1200px) {
+    .seller-listings-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .seller-listings-grid { grid-template-columns: 1fr; }
+    .seller-profile__header { flex-direction: column; text-align: center; }
+    .seller-profile__rating { justify-content: center; }
+    .review-item__body { margin-left: 0; margin-top: var(--space-2); }
+}

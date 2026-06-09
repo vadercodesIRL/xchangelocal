@@ -1,0 +1,364 @@
+/* tokens.css - all CSS variables in one place
+   load order: tokens.css -> base.css -> components.css -> pages/ */
+
+/* --- raw colour palette (maritime coastal theme) ---
+   don't use these directly in components, use the semantic tokens below */
+
+:root {
+
+  /* Coastal Teal scale — primary brand family */
+  --color-teal-50:   #F0FAFA;
+  --color-teal-100:  #CCEFED;
+  --color-teal-200:  #8BE3DF;
+  --color-teal-300:  #5CD4D0;
+  --color-teal-400:  #1B9FAA;
+  --color-teal-500:  #0A8090;
+  --color-teal-600:  #006471;
+  --color-teal-700:  #004E5E;
+  --color-teal-800:  #003344;
+
+  /* Deep Navy — dark backgrounds */
+  --color-canvas-900:  #0C2340;
+  --color-canvas-800:  #0F2E50;
+  --color-canvas-700:  #153860;
+  --color-canvas-600:  #1C4470;
+
+  /* Slate — muted grey-teal */
+  --color-slate:       #607B87;
+  --color-slate-light: #8AA5B0;
+  --color-slate-dark:  #3D5560;
+
+  /* Warm Sand — accent warmth */
+  --color-sand-300:  #E0D0B5;
+  --color-sand-400:  #CAB99A;
+  --color-sand-500:  #B09878;
+  --color-sand-600:  #8A7355;
+
+  /* Status greens */
+  --color-green-400:   #34D399;
+  --color-green-500:   #10B981;
+  --color-green-600:   #059669;
+
+  /* Status reds */
+  --color-red-400:     #F87171;
+  --color-red-500:     #EF4444;
+  --color-red-600:     #DC2626;
+
+  /* Purple — admin accent */
+  --color-purple-400:  #A78BFA;
+  --color-purple-500:  #8B5CF6;
+  --color-purple-600:  #7C3AED;
+}
+
+
+/* --- semantic tokens (light mode, default) --- */
+
+:root {
+
+  /* Backgrounds */
+  --color-bg:           var(--color-teal-50);
+  --color-surface:      #FFFFFF;
+  --color-surface-alt:  var(--color-teal-100);
+
+  /* Borders */
+  --color-border:        var(--color-teal-200);
+  --color-border-strong: var(--color-teal-300);
+
+  /* Text */
+  --color-text:         var(--color-canvas-900);
+  --color-text-muted:   var(--color-slate);
+  --color-text-light:   var(--color-teal-400);
+  --color-text-inverse: #FFFFFF;
+
+  /* Navbar */
+  --color-nav-bg:       var(--color-teal-400);
+  --color-nav-text:     #FFFFFF;
+  --color-nav-border:   var(--color-teal-500);
+
+  /* Primary — Coastal Teal */
+  --color-primary:        var(--color-teal-400);
+  --color-primary-hover:  var(--color-teal-500);
+  --color-primary-active: var(--color-teal-600);
+  --color-primary-light:  rgba(27, 159, 170, 0.12);
+  --color-primary-on:     #FFFFFF;
+
+  /* Secondary — Light Aqua */
+  --color-secondary:        var(--color-teal-300);
+  --color-secondary-hover:  var(--color-teal-400);
+  --color-secondary-active: var(--color-teal-500);
+  --color-secondary-light:  rgba(92, 212, 208, 0.15);
+  --color-secondary-on:     var(--color-canvas-900);
+
+  /* Accent — Warm Sand */
+  --color-accent:        var(--color-sand-400);
+  --color-accent-hover:  var(--color-sand-300);
+  --color-accent-active: var(--color-sand-500);
+  --color-accent-light:  rgba(202, 185, 154, 0.18);
+  --color-accent-text:   var(--color-sand-600);
+  --color-accent-on:     var(--color-canvas-900);
+
+  /* Status */
+  --color-success:       var(--color-green-500);
+  --color-success-light: rgba(16, 185, 129, 0.12);
+  --color-danger:        var(--color-red-500);
+  --color-danger-light:  rgba(239, 68, 68, 0.12);
+  --color-success-text:  var(--color-green-600);
+  --color-success-bg:    rgba(16, 185, 129, 0.10);
+  --color-danger-text:   var(--color-red-600);
+  --color-danger-bg:     rgba(239, 68, 68, 0.10);
+  --color-warning-text:  var(--color-sand-600);
+  --color-warning-bg:    rgba(202, 185, 154, 0.15);
+
+  /* Admin purple semantic */
+  --color-admin-bg:    rgba(139, 92, 246, 0.10);
+  --color-admin-text:  #7C3AED;
+}
+
+
+/* --- dark mode overrides (applied when data-theme="dark") --- */
+
+html[data-theme="dark"] {
+
+  /* Backgrounds */
+  --color-bg:           var(--color-canvas-900);
+  --color-surface:      rgba(27, 159, 170, 0.10);
+  --color-surface-alt:  rgba(27, 159, 170, 0.18);
+
+  /* Borders */
+  --color-border:        rgba(92, 212, 208, 0.20);
+  --color-border-strong: rgba(92, 212, 208, 0.42);
+
+  /* Text */
+  --color-text:         var(--color-teal-50);
+  --color-text-muted:   var(--color-teal-300);
+  --color-text-light:   rgba(92, 212, 208, 0.50);
+  --color-text-inverse: var(--color-canvas-900);
+
+  /* Navbar */
+  --color-nav-bg:       var(--color-canvas-900);
+  --color-nav-text:     var(--color-teal-50);
+  --color-nav-border:   rgba(27, 159, 170, 0.28);
+
+  /* Primary */
+  --color-primary:        var(--color-teal-400);
+  --color-primary-hover:  var(--color-teal-300);
+  --color-primary-active: var(--color-teal-500);
+  --color-primary-light:  rgba(27, 159, 170, 0.18);
+  --color-primary-on:     #FFFFFF;
+
+  /* Secondary */
+  --color-secondary:        var(--color-teal-300);
+  --color-secondary-hover:  var(--color-teal-200);
+  --color-secondary-active: var(--color-teal-400);
+  --color-secondary-light:  rgba(92, 212, 208, 0.15);
+  --color-secondary-on:     var(--color-canvas-900);
+
+  /* Accent */
+  --color-accent:        var(--color-sand-400);
+  --color-accent-hover:  var(--color-sand-300);
+  --color-accent-active: var(--color-sand-500);
+  --color-accent-light:  rgba(202, 185, 154, 0.15);
+  --color-accent-text:   var(--color-sand-300);
+  --color-accent-on:     var(--color-canvas-900);
+
+  /* Status */
+  --color-success:        var(--color-green-500);
+  --color-success-light:  rgba(16, 185, 129, 0.15);
+  --color-danger:         var(--color-red-500);
+  --color-danger-light:   rgba(239, 68, 68, 0.15);
+  --color-success-text:   var(--color-green-400);
+  --color-success-bg:     rgba(16, 185, 129, 0.15);
+  --color-danger-text:    var(--color-red-400);
+  --color-danger-bg:      rgba(239, 68, 68, 0.15);
+  --color-warning-text:   var(--color-sand-300);
+  --color-warning-bg:     rgba(202, 185, 154, 0.15);
+
+  /* Admin purple semantic */
+  --color-admin-bg:    rgba(139, 92, 246, 0.18);
+  --color-admin-text:  #A78BFA;
+}
+
+
+/* --- typography --- */
+
+:root {
+  /* Apple SF Pro on Apple devices, Segoe UI on Windows, Roboto on Android */
+  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', 'Cascadia Code', 'Courier New', monospace;
+
+  /* Type scale — 1.25 ratio, 16px base */
+  --text-xs:    0.64rem;    /* ~10px  */
+  --text-sm:    0.8rem;     /* ~13px  */
+  --text-base:  1rem;       /*  16px  */
+  --text-lg:    1.25rem;    /*  20px  */
+  --text-xl:    1.563rem;   /*  25px  */
+  --text-2xl:   1.953rem;   /*  31px  */
+  --text-3xl:   2.441rem;   /*  39px  */
+  --text-4xl:   3.052rem;   /*  49px  */
+  --text-5xl:   3.815rem;   /*  61px  */
+
+  /* Line heights */
+  --leading-tight:    1.1;
+  --leading-heading:  1.25;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.6;
+  --leading-loose:    1.75;
+
+  /* Font weights */
+  --weight-regular:    400;
+  --weight-medium:     500;
+  --weight-semibold:   600;
+  --weight-bold:       700;
+  --weight-extrabold:  800;
+
+  /* Letter spacing */
+  --tracking-tight:    -0.02em;
+  --tracking-normal:    0em;
+  --tracking-wide:      0.04em;
+  --tracking-widest:    0.1em;
+}
+
+
+/* --- spacing scale (4px base) --- */
+
+:root {
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+}
+
+
+/* --- border radius --- */
+
+:root {
+  --radius-xs:    2px;
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:    16px;
+  --radius-full:  9999px;
+}
+
+
+/* --- shadows --- */
+
+:root {
+  --shadow-card:
+    0 1px 3px rgba(27, 159, 170, 0.10),
+    0 4px 16px rgba(27, 159, 170, 0.12);
+
+  --shadow-card-hover:
+    0 2px 6px rgba(27, 159, 170, 0.16),
+    0 8px 28px rgba(27, 159, 170, 0.20);
+
+  --shadow-dropdown:
+    0 2px 4px rgba(27, 159, 170, 0.10),
+    0 8px 24px rgba(27, 159, 170, 0.14);
+
+  --shadow-modal:
+    0 4px 8px rgba(27, 159, 170, 0.12),
+    0 20px 48px rgba(27, 159, 170, 0.20);
+}
+
+html[data-theme="dark"] {
+  --shadow-card:
+    0 1px 0 rgba(92, 212, 208, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.55);
+
+  --shadow-card-hover:
+    0 2px 0 rgba(92, 212, 208, 0.30),
+    0 8px 28px rgba(0, 0, 0, 0.65);
+
+  --shadow-dropdown:
+    0 2px 0 rgba(0, 0, 0, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.55);
+
+  --shadow-modal:
+    0 4px 0 rgba(0, 0, 0, 0.45),
+    0 20px 48px rgba(0, 0, 0, 0.70);
+}
+
+
+/* --- animations and transitions --- */
+
+:root {
+  --duration-instant:  75ms;
+  --duration-fast:     150ms;
+  --duration-base:     250ms;
+  --duration-slow:     400ms;
+  --duration-lazy:     600ms;
+
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out:  cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes xl-float-a {
+  0%   { transform: translateY(0)   rotate(0deg);   opacity: 0.04; }
+  50%  { transform: translateY(-40px) rotate(5deg); opacity: 0.06; }
+  100% { transform: translateY(0)   rotate(0deg);   opacity: 0.04; }
+}
+
+@keyframes xl-float-b {
+  0%   { transform: translateX(0)   rotate(0deg);   opacity: 0.05; }
+  50%  { transform: translateX(30px) rotate(-4deg); opacity: 0.03; }
+  100% { transform: translateX(0)   rotate(0deg);   opacity: 0.05; }
+}
+
+@keyframes xl-float-c {
+  0%   { transform: translate(0, 0)        rotate(0deg);  opacity: 0.04; }
+  33%  { transform: translate(20px, -25px) rotate(6deg);  opacity: 0.06; }
+  66%  { transform: translate(-15px, 10px) rotate(-3deg); opacity: 0.03; }
+  100% { transform: translate(0, 0)        rotate(0deg);  opacity: 0.04; }
+}
+
+@keyframes xl-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes xl-lift {
+  to {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+@keyframes xl-gradient-flow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* --- z-index scale --- */
+
+:root {
+  --z-base:      0;
+  --z-raised:    10;
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-overlay:   300;
+  --z-modal:     400;
+  --z-toast:     500;
+}
+
+
+/* --- breakpoints (reference only, cant use var() in media queries)
+   480px phones, 768px tablets, 1024px laptops, 1280px desktops --- */

@@ -1,0 +1,20 @@
+Options -Indexes
+
+# ── Block direct HTTP access to backend directories ───────────────────────────
+# The includes/, sql/, and docs/ directories must never be web-accessible.
+# Each directory also carries its own .htaccess deny rule as a belt-and-suspenders.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(includes|sql|docs)(/|$) - [F,L]
+</IfModule>
+
+# ── Production only: force HTTPS ──────────────────────────────────────────────
+# Uncomment when deploying to InfinityFree:
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ── Suppress server version in error pages ────────────────────────────────────
+ServerSignature Off

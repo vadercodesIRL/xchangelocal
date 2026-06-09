@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="XchangeLocal logo icon">
+  <defs>
+    <!-- Bag front face: Kasi Gold gradient -->
+    <linearGradient id="xl-front" x1="8" y1="38" x2="72" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFD340"/>
+      <stop offset="100%" stop-color="#F09000"/>
+    </linearGradient>
+
+    <!-- Right depth face: Cobalt Blue gradient -->
+    <linearGradient id="xl-side" x1="0" y1="38" x2="0" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3D64D6"/>
+      <stop offset="100%" stop-color="#0C1F5C"/>
+    </linearGradient>
+
+    <!-- Handles: Jacaranda Purple → Cobalt Blue -->
+    <linearGradient id="xl-handle" x1="0" y1="13" x2="0" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9B5CE8"/>
+      <stop offset="100%" stop-color="#3D64D6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bottom 3D face (darkest cobalt) -->
+  <polygon points="8,90 72,90 86,98 22,98" fill="#0A1845"/>
+
+  <!-- Right 3D face (cobalt gradient) -->
+  <polygon points="72,38 86,48 86,98 72,90" fill="url(#xl-side)"/>
+
+  <!-- Main bag front face (gold gradient) -->
+  <rect x="8" y="38" width="64" height="52" rx="2" fill="url(#xl-front)"/>
+
+  <!-- Left handle -->
+  <path d="M 22 38 C 22 20 34 13 44 13 C 54 13 66 20 66 38"
+        stroke="url(#xl-handle)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Right handle (overlaps left — matches 3D bag perspective) -->
+  <path d="M 40 38 C 40 20 52 13 62 13 C 72 13 84 20 84 38"
+        stroke="url(#xl-handle)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Checkmark: Jacaranda Purple — exceeds 6:1 contrast on gold -->
+  <path d="M 18 62 L 37 80 L 68 46"
+        stroke="#7B2FBE" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

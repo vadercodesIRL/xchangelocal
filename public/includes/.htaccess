@@ -1,0 +1,10 @@
+# Deny all direct web access to this directory.
+# PHP files here are included by page files, never accessed directly.
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
